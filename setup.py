@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='mqrdr',  
-     version='0.2',
+     version='0.1',
      author="Gerry Devine",
      author_email="gerry.devine@mq.edu.au",
      description="Python 3 library, leveraging off of the Figshare API, for programmatic interaction with the Macquarie University Research Data Repository",
