@@ -34,7 +34,8 @@ url: http://gdevine.github.io
 github_username: gdevine
 
 # Build settings
-theme: minima
+# theme: minima
+remote_theme: pmarsceill/just-the-docs
 #theme: just-the-docs
 plugins:
   - jekyll-feed
