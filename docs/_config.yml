@@ -37,6 +37,7 @@ github_username: gdevine
 #theme: minima
 #theme: just-the-docs
 remote_theme: pmarsceill/just-the-docs
+
 plugins:
   - jekyll-feed
 search_enabled: true
