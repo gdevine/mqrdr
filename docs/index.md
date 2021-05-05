@@ -4,8 +4,6 @@
 
 layout: home
 title: Home
-permalink: /
-nav_order: 1
 ---
 
 # MQRDR
@@ -16,7 +14,7 @@ _MQRDR_ is a Python 3 library allowing you to programmatically interact with the
 
 ## Installation
 
-Ensure you have _Python 3_ and the package manager _pip_ installed. Run the following command at the terminal to install _MQRDR_
+1. Ensure you have _Python 3_ and the package manager _pip_ installed. Run the following command at the terminal to install _MQRDR_
 
 {% highlight shell %}
 $ pip install mqrdr
