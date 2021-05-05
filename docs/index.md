@@ -22,9 +22,9 @@ Ensure you have _Python 3_ and the package manager _pip_ installed. Run the foll
 $ pip install mqrdr
 {% endhighlight %}
 
-##
+## Import
 
-Within you python script import the _MQRDR_ library
+Within your python script import the _MQRDR_ library
 
 {% highlight python %}
 import mqrdr
@@ -36,7 +36,9 @@ To use MQRDR, you must first have an active account on the Macquarie University 
 
 # Structure
 
-To get
+MQRDR is made up of a number of modules:
+
+1.
 
 # Projects
 
