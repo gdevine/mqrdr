@@ -28,7 +28,7 @@ baseurl: /mqrdr
 url: http://gdevine.github.io
 # root: /
 # root: /docs
-root: /root
+# root: /root
 
 # twitter_username: jekyllrb
 github_username: gdevine
