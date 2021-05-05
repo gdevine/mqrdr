@@ -32,9 +32,11 @@ root: /mqrdr
 github_username: gdevine
 
 # Build settings
-theme: minima
+#theme: minima
+theme: just-the-docs
 plugins:
   - jekyll-feed
+search_enabled: true
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -54,4 +56,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
