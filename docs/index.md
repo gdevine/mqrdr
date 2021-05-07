@@ -1,11 +1,9 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+nav_order: 1
 ---
 
-# MQRDR
+# Introduction
 
 _MQRDR_ is a Python 3 library allowing you to programmatically interact with the Macquarie University [Research Data Repository](https://mq.figshare.com){:target="\_blank"}. It leverages the [Figshare API](https://docs.figshare.com){:target="\_blank"} to provide basic interfacing with the data repository as well as some more bespoke endpoints in line with the more advanced features of the Macquarie RDR.
 
@@ -48,39 +46,9 @@ token = credentials.token
 
 # Structure
 
-MQRDR is made up of a number of modules:
+MQRDR is made up of a number of modules, each referring to the type of resource within the repository. Follow the links below to view the endpoints for each resource type:
 
-- [Projects](#projects)
-- [Articles](#articles)
-- [Accounts](#accounts)
-- [Groups](#groups)
-
-## Projects
-
-### 1. List (my) projects
-
-{% highlight python %}
-mqrdr.projects.list_private_projects(token, page=1, page_size=10, impersonated_id=None)
-{% endhighlight %}
-
-Returns a list of projects belonging to the current user, including published and private projects
-
-**Options**
-
-- _token_ : Repository authorization token (string, required)
-- _page_ : Page number. Used for pagination with page_size (integer, optional, default = 1)
-- _page_size_ : The number of results included on a page. Used for pagination with page (integer, optional, default = 10)
-- _impersonated_id_ : Account ID of user being impersonated (integer, optional, only usable by admin accounts)
-
-**Example**
-
-{% highlight python %}
-projects = mqrdr.projects.list_private_projects(token)
-
-{% endhighlight %}
-
-## Articles
-
-## Accounts
-
-## Groups
+- [Projects](/mqrdr/projects)
+- [Articles](/mqrdr/articles)
+- [Accounts](/mqrdr/accounts)
+- [Groups](/mqrdr/groups)

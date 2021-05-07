@@ -112,12 +112,13 @@ def download_public_article_file(token, article_id, file_id):
 
 # Private Articles
 
-def list_private_articles(token, page=1, page_size=10):
+def list_private_articles(token, page=1, page_size=10, impersonated_id=None):
     ''' List private articles
 
-    token: Repository authorization token (string)
-    page: Page number. Used for pagination with page_size
-    page_size: The number of results included on a page. Used for pagination with page
+    token: Repository authorization token (string, required)
+    page: Page number. Used for pagination with page_size (integer, optional, default = 1)
+    page_size: The number of results included on a page. Used for pagination with page (integer, optional, default = 10)
+    impersonated_id: Account ID of user being impersonated (integer, optional, only usable by admin accounts)
     '''
 
     headers = utils.create_token_header(token)
