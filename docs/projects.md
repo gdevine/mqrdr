@@ -63,6 +63,7 @@ Searches projects belonging to the current user, including published and private
 
 **An example of a _data_ object**
 
+{% highlight python %}
 {
 "order": "published_date",
 "search_for": "figshare",
@@ -76,6 +77,7 @@ Searches projects belonging to the current user, including published and private
 "modified_since": "2017-12-22",
 "group": 2000013
 }
+{% endhighlight %}
 
 **Impersonation**
 
