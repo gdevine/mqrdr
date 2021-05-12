@@ -61,7 +61,7 @@ Searches projects belonging to the current user, including published and private
 - _token_ : Repository authorization token (string, required)
 - _data_ : object containing search parameters
 
-** An example of a _data_ object **
+**An example of a _data_ object**
 
 {
 "order": "published_date",
@@ -78,6 +78,7 @@ Searches projects belonging to the current user, including published and private
 }
 
 **Impersonation**
+
 The impersonate option must be included in the body (_data_ object) when using the search_user_projects function.
 
 **Example**
