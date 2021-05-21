@@ -5,8 +5,9 @@ nav_order: 2
 
 # Projects
 
-- [List user projects](#list-my-projects)
-- [Search user projects](#search-my-projects)
+- [List user projects](#list-user-projects)
+- [Search user projects](#search-user-projects)
+- [View user project](#view-a-user-project)
 
 ## List user projects
 
@@ -59,7 +60,7 @@ Searches projects belonging to the current user, including published and private
 **Options**
 
 - _token_ : Repository authorization token (string, required)
-- _data_ : object containing search parameters
+- _data_ : object containing search parameters (object, required)
 
 **An example of a _data_ object**
 
@@ -81,7 +82,7 @@ Searches projects belonging to the current user, including published and private
 
 **Impersonation**
 
-The impersonate option must be included in the body (_data_ object) when using the search_user_projects function.
+The impersonate option must be included in the body (_data_ object) when using the search_user_projects function. Only applicable for admin accounts.
 
 **Example**
 
@@ -94,7 +95,7 @@ print(found_projects)
 
 [
 {'modified_date': '2021-05-12T02:02:16Z',
-'title': 'PB01 Sample Project for RDR Testing Normal Title Normal Description (v5 23/04/21 13:22 update)',
+'title': 'PB01 Sample Project for RDR Testing Normal Title Normal Description (v5 23/04.....',
 'url': 'https://api.figshare.com/v2/account/projects/111356',
 'published_date': None,
 'storage': 'group',
@@ -102,5 +103,37 @@ print(found_projects)
 'created_date': '2021-04-09T10:17:03Z',
 'id': 111356}
 ]
+
+{% endhighlight %}
+
+## View a user project
+
+{% highlight python %}
+mqrdr.projects.view_user_project(token, project_id, impersonated_id=None)
+{% endhighlight %}
+
+View a project belonging to the current user, including published and private projects
+
+**Options**
+
+- _token_ : Repository authorization token (string, required)
+- _project_id_ : ID of the project (integer, required)
+- _impersonated_id_ : Account ID of user being impersonated (integer, optional, only usable by admin accounts)
+
+**Example**
+
+{% highlight python %}
+project = mqrdr.projects.view_user_project(token, '111356')
+print(project)
+
+{'description': '19/04 This test added above the line. The following text was ...',
+'used_quota': 0,
+'created_date': '2021-04-09T10:17:03Z',
+'quota': 1073741824,
+'funding_list': [],
+'id': 111356,
+...
+...
+}
 
 {% endhighlight %}

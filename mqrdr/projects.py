@@ -11,8 +11,8 @@ from mqrdr import settings, utils
 BASE_URL = settings.BASE_URL
 
 
-def list_individual_projects(token, page=1, page_size=10, impersonated_id=None):
-    ''' List my individual projects (both private and public)
+def list_user_projects(token, page=1, page_size=10, impersonated_id=None):
+    ''' List projects belonging to the current user (both private and public)
 
     token: Repository authorization token (string, required)
     page: Page number. Used for pagination with page_size (integer, optional, default = 1)
@@ -28,8 +28,8 @@ def list_individual_projects(token, page=1, page_size=10, impersonated_id=None):
     return utils.endpoint_get(token, request_url)
 
 
-def search_individual_projects(token, data):
-    ''' Search my individual projects (both private and public)
+def search_user_projects(token, data):
+    ''' Search projects belonging to the current user (both private and public)
 
     token: Repository authorization token (string)
     data: Dictionary object containing project filters
@@ -39,6 +39,22 @@ def search_individual_projects(token, data):
 
     return utils.endpoint_post(token, request_url, data)
 
+
+def view_user_project(token, project_id, impersonated_id=None):
+    ''' View a project belonging to the current user (both private and public)
+
+    token: Repository authorization token (string, required)
+    project_id: ID of the project (integer, required)
+    impersonated_id: Account ID of user being impersonated (integer, optional, only usable by RDR admin accounts)
+    '''
+
+
+    if impersonated_id:
+        request_url = f"{BASE_URL}/account/projects/{project_id}?impersonate={impersonated_id}"
+    else:
+        request_url = f"{BASE_URL}/account/projects/{project_id}"
+    
+    return utils.endpoint_get(token, request_url)
 
 # ---------------------------------------------------------
 
@@ -60,19 +76,6 @@ def create_private_project(token, data, impersonated_id=None):
     response = requests.post(request_url, json=data, headers=headers)
 
     return response.json()
-
-
-def view_private_project(token, project_id, impersonated_id=None):
-    ''' View a private project
-
-    token: Repository authorization token (string)
-    project_id: ID of the project (integer)
-    impersonated_id: Account ID of user being impersonated (optional, integer)
-    '''
-
-    request_url = f"{BASE_URL}/account/projects/{project_id}?impersonate={impersonated_id}"
-    
-    return utils.endpoint_get(token, request_url)
 
 
 def invite_private_project_collaborator(token, project_id, data, impersonated_id=None):
